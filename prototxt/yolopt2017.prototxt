@@ -10,6 +10,7 @@ input_shape {
 layer {
   name: "conv1"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "data"
   top: "conv1"
   convolution_param {
@@ -43,6 +44,7 @@ layer {
 layer{
   name: "conv2"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "pool1"
   top: "conv2"
   convolution_param {
@@ -76,6 +78,7 @@ layer {
 layer{
   name: "conv3"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "pool2"
   top: "conv3"
   convolution_param {
@@ -99,6 +102,7 @@ layer {
 layer{
   name: "conv4"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv3"
   top: "conv4"
   convolution_param {
@@ -121,6 +125,7 @@ layer {
 layer{
   name: "conv5"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv4"
   top: "conv5"
   convolution_param {
@@ -143,6 +148,7 @@ layer {
 layer{
   name: "conv6"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv5"
   top: "conv6"
   convolution_param {
@@ -176,6 +182,7 @@ layer {
 layer{
   name: "conv7"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "pool6"
   top: "conv7"
   convolution_param {
@@ -198,6 +205,7 @@ layer {
 layer{
   name: "conv8"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv7"
   top: "conv8"
   convolution_param {
@@ -220,6 +228,7 @@ layer {
 layer{
   name: "conv9"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv8"
   top: "conv9"
   convolution_param {
@@ -242,6 +251,7 @@ layer {
 layer{
   name: "conv10"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv9"
   top: "conv10"
   convolution_param {
@@ -264,6 +274,7 @@ layer {
 layer{
   name: "conv11"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv10"
   top: "conv11"
   convolution_param {
@@ -287,6 +298,7 @@ layer {
 layer{
   name: "conv12"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv11"
   top: "conv12"
   convolution_param {
@@ -310,6 +322,7 @@ layer {
 layer{
   name: "conv13"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv12"
   top: "conv13"
   convolution_param {
@@ -332,6 +345,7 @@ layer {
 layer{
   name: "conv14"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv13"
   top: "conv14"
   convolution_param {
@@ -354,6 +368,7 @@ layer {
 layer{
   name: "conv15"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv14"
   top: "conv15"
   convolution_param {
@@ -377,6 +392,7 @@ layer {
 layer{
   name: "conv16"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv15"
   top: "conv16"
   convolution_param {
@@ -412,6 +428,7 @@ layer {
 layer{
   name: "conv17"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "pool16"
   top: "conv17"
   convolution_param {
@@ -435,6 +452,7 @@ layer {
 layer{
   name: "conv18"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv17"
   top: "conv18"
   convolution_param {
@@ -459,6 +477,7 @@ layer {
 layer{
   name: "conv19"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv18"
   top: "conv19"
   convolution_param {
@@ -483,6 +502,7 @@ layer {
 layer{
   name: "conv20"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv19"
   top: "conv20"
   convolution_param {
@@ -507,6 +527,7 @@ layer {
 layer{
   name: "conv21"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv20"
   top: "conv21"
   convolution_param {
@@ -530,9 +551,9 @@ layer {
 layer{
   name: "conv22"
   type: "Convolution"
+  engine: "MKL2017"
   bottom: "conv21"
   top: "conv22"
-  engine: "MKL2017"
   convolution_param {
     num_output: 1024
     kernel_size: 3
@@ -651,4 +672,3 @@ layer{
     num_output: 1470
   }
 }
-
