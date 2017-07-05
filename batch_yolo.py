@@ -158,7 +158,7 @@ def main(argv):
 		
 		avg_fps = imagesProcessed / (elapsedTime + (imagesProcessed-1)/avg_fps)
 
-		print 'Running Average: " FPS', avg_fps
+		print 'Running Average: {0} FPS'.format(avg_fps)
 		print out.iteritems()
 		img_cv = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 		results = interpret_output(out['result'][0], img.shape[1], img.shape[0]) # fc27 instead of fc12 for yolo_small 
