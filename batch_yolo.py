@@ -12,7 +12,7 @@ def interpret_output(output, img_width, img_height):
 	classes = ["aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train","tvmonitor"]
 	w_img = img_width
 	h_img = img_height
-	print w_img, h_img
+	#print w_img, h_img
 	threshold = 0.2
 	iou_threshold = 0.5
 	num_class = 20
@@ -87,7 +87,7 @@ def show_results(img,results, img_width, img_height):
 		y = int(results[i][2])
 		w = int(results[i][3])//2
 		h = int(results[i][4])//2
-		if disp_console : print '    class : ' + results[i][0] + ' , [x,y,w,h]=[' + str(x) + ',' + str(y) + ',' + str(int(results[i][3])) + ',' + str(int(results[i][4]))+'], Confidence = ' + str(results[i][5])
+		#if disp_console : print '    class : ' + results[i][0] + ' , [x,y,w,h]=[' + str(x) + ',' + str(y) + ',' + str(int(results[i][3])) + ',' + str(int(results[i][4]))+'], Confidence = ' + str(results[i][5])
 		xmin = x-w
 		xmax = x+w
 		ymin = y-h
@@ -100,11 +100,11 @@ def show_results(img,results, img_width, img_height):
 			xmax = img_width
 		if ymax>img_height:
 			ymax = img_height
-		if  imshow:
-			cv2.rectangle(img_cp,(xmin,ymin),(xmax,ymax),(0,255,0),2)
-			print xmin, ymin, xmax, ymax
-			cv2.rectangle(img_cp,(xmin,ymin-20),(xmax,ymin),(125,125,125),-1)
-			cv2.putText(img_cp,results[i][0] + ' : %.2f' % results[i][5],(xmin+5,ymin-7),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),1)	
+		#if  imshow:
+		#	cv2.rectangle(img_cp,(xmin,ymin),(xmax,ymax),(0,255,0),2)
+		#	print xmin, ymin, xmax, ymax
+		#	cv2.rectangle(img_cp,(xmin,ymin-20),(xmax,ymin),(125,125,125),-1)
+		#	cv2.putText(img_cp,results[i][0] + ' : %.2f' % results[i][5],(xmin+5,ymin-7),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),1)	
 	# if imshow :
 	# 	cv2.imshow('YOLO detection',img_cp)
 	# 	cv2.waitKey(1000)
@@ -142,6 +142,7 @@ def main(argv):
 	img_list_file = open(img_list_filename, 'r')
 
 	avg_fps = 0.0001
+	time_spent=0
 	imagesProcessed = 0
 
 	for line in img_list_file:
@@ -155,16 +156,18 @@ def main(argv):
 		imagesProcessed = imagesProcessed+1
 
 		elapsedTime = (end-start).total_seconds()
+		time_spent = time_spent + elapsedTime
 		
-		avg_fps = imagesProcessed / (elapsedTime + (imagesProcessed-1)/avg_fps)
+		avg_fps = imagesProcessed / time_spent
 
 		print 'Running Average: {0} FPS'.format(avg_fps)
-		print out.iteritems()
+		#print out.iteritems()
 		img_cv = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 		results = interpret_output(out['result'][0], img.shape[1], img.shape[0]) # fc27 instead of fc12 for yolo_small 
 		show_results(img_cv,results, img.shape[1], img.shape[0])
 		#cv2.waitKey(10000)
 
+#	print 'Running Average: {0} FPS'.format(avg_fps)
 
 
 if __name__=='__main__':	
