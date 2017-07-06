@@ -154,7 +154,7 @@ def main(argv):
 		img = caffe.io.load_image(img_filename) # load the image using caffe io
 		inputs = img
 		indata = np.asarray([transformer.preprocess('data', inputs)])
-		pre_end = datatime.now()
+		pre_end = datetime.now()
 
 		pre_time = (pre_end-pre_start).total_seconds()
 
@@ -184,7 +184,7 @@ def main(argv):
 		avg_fwd_per_frame = fwd_total / imagesProcessed
 		avg_post_per_frame = post_total / imagesProcessed
 
-		print 'Pre Avg: ' + avg_pre_per_frame + ' Fwd Avg: ' + avg_fwd_per_frame + ' Post Avg: ' + avg_post_per_frame
+		print 'Pre Avg: ' + str(avg_pre_per_frame) + ' Fwd Avg: ' + str(avg_fwd_per_frame) + ' Post Avg: ' + str(avg_post_per_frame)
 
 		#cv2.waitKey(10000)
 
