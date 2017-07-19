@@ -184,7 +184,7 @@ def main(argv):
 		avg_fwd_per_frame = fwd_total / imagesProcessed
 		avg_post_per_frame = post_total / imagesProcessed
 
-		print 'Pre Avg: ' + str(avg_pre_per_frame) + ' Fwd Avg: ' + str(avg_fwd_per_frame) + ' Post Avg: ' + str(avg_post_per_frame)
+		print 'Pre Avg: ' + str(avg_pre_per_frame) + ' Fwd/Bkwd Avg: ' + str(avg_fwd_per_frame) + ' Post Avg: ' + str(avg_post_per_frame)
 
 		#cv2.waitKey(10000)
 
