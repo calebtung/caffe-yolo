@@ -1,0 +1,7 @@
+/homes/calebt/caffe-yolo/images/cat-1.jpg
+/homes/calebt/caffe-yolo/images/cat.jpg
+/homes/calebt/caffe-yolo/images/dog.jpg
+/homes/calebt/caffe-yolo/images/eagle.jpg
+/homes/calebt/caffe-yolo/images/horses-1.jpg
+/homes/calebt/caffe-yolo/images/horses.jpg
+/homes/calebt/caffe-yolo/images/person.jpg
